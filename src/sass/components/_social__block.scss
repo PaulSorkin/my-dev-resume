@@ -19,7 +19,8 @@
 }
 
 .social_link {
-  cursor: pointer;
+  cursor: $cursor;
+  //cursor: pointer;
   transition: fill 0.2s ease-in-out;
   fill: $color-primary;
   position: relative;
