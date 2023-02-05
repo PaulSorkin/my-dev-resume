@@ -18,6 +18,11 @@ h1, h2 {
   color: $color-primary;
   letter-spacing: -2.5px;
   margin: 0;
+
+  @media (max-width: $tablet-width) {
+    @include font($size: 7.2rem, $height: 7.2rem, $weight: 700);
+    letter-spacing: -2.04545px;
+  }
 }
 
 h3 {

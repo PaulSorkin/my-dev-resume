@@ -1,14 +1,14 @@
 import './App.scss';
-import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
 import Skills from "./components/Skills";
+import Container from "./components/Container";
 
 function App() {
     return (
-        <Wrapper>
+        <Container>
             <Header/>
             <Skills />
-        </Wrapper>
+        </Container>
     );
 }
 

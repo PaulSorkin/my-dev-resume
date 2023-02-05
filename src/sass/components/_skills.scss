@@ -9,6 +9,12 @@
   column-gap: 3rem;
 
   position: relative;
+
+  @media (max-width: $tablet-width) {
+    column-gap: 0.7rem;
+    row-gap: 5.2rem;
+    padding-top: 5.2rem;
+  }
 }
 
 .skill__block {
