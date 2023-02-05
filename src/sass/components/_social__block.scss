@@ -2,6 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 .logo {
@@ -10,6 +15,12 @@
   @include font($size: 3.2rem, $height: 3.2rem, $weight: 700);
   letter-spacing: -0.444444px;
   margin: 0;
+
+  z-index: 5;           //Check if its okay on desktop and tablet
+
+  @media (max-width: $mobile-width) {
+   font-size: 2.4rem;
+  }
 }
 
 .social__block__links {
@@ -23,6 +34,10 @@
     gap: 3.1rem;
   }
 
+  @media (max-width: $mobile-width) {
+    gap: 2.56rem;
+  }
+
 }
 
 .social_link {
@@ -33,5 +48,10 @@
   z-index: 5;
   &:hover {
     fill: $color-additional;
+  }
+
+  @media (max-width: $mobile-width) {
+    height: 1.92rem;
+    width: 1.92rem;
   }
 }

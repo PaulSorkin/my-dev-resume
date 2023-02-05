@@ -2,8 +2,11 @@
   padding: 0 calc(($desktop-width - $content-width) / 2);
 
   @media (max-width: $tablet-width) {
-    //max-width: $tablet-width
     padding: 0 3rem;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 0 1.6rem;
   }
 
 }
