@@ -1,14 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
 
-* {
-  box-sizing: border-box;
-}
+//Abstract
+@import "sass/abstract/constants";
+@import "sass/abstract/placeholders";
+@import "sass/abstract/mixins";
 
-:root {
-  /* Typography */
-
-}
-
-html {
-  font-size: 10px;
-}
+//Base
+@import "sass/base/base";
