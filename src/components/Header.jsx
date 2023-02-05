@@ -6,10 +6,11 @@ import Rings from '../assets/svg/rings.svg'
 const Header = () => {
     return (
         <header>
-            <SocialBlock/>
+            <SocialBlock />
+            <div className="photo__background"></div>
             <img src={Rings} alt="Rings" className="background"/>
             <div className="greeting__block">
-                <h1>Nice to meet you! I’m Paul Sorkin.</h1>
+                <h1>Nice to meet you! I’m <span>Paul Sorkin</span>.</h1>
                 <p className="about_text">Based in the UK, I’m a front-end developer passionate about building
                     accessible web apps that users love.</p>
             </div>

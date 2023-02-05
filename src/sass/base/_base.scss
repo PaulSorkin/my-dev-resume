@@ -17,6 +17,7 @@ h1, h2 {
   @include font($size: 8.8rem, $height: 8.8rem, $weight: 700);
   color: $color-primary;
   letter-spacing: -2.5px;
+  margin: 0;
 }
 
 h3 {

@@ -9,17 +9,21 @@
   @extend %font-primary;
   @include font($size: 3.2rem, $height: 3.2rem, $weight: 700);
   letter-spacing: -0.444444px;
+  margin: 0;
 }
 
 .social__block__links {
   display: flex;
   gap: 3.2rem;
+  padding-right: 2.95rem;
 }
 
 .social_link {
   cursor: pointer;
   transition: fill 0.2s ease-in-out;
   fill: $color-primary;
+  position: relative;
+  z-index: 5;
   &:hover {
     fill: $color-additional;
   }
