@@ -1,0 +1,38 @@
+.skills {
+  border-top: solid 0.1rem $color-primary;
+  padding-top: 7.2rem;
+  padding-bottom: 16.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  row-gap: 5.8rem;
+  column-gap: 3rem;
+
+  position: relative;
+}
+
+.skill__block {
+  width: 34.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.skill__name {
+  color: $color-primary;
+  @extend %font-primary;
+  @include font($size: 4.8rem, $height: 5.6rem, $weight: 700);
+  letter-spacing: -1.5px;
+}
+
+.skill__experience {
+  color: $color-secondary;
+  @extend %font-primary;
+  @include font($size: 1.8rem, $height: 2.8rem, $weight: 500);
+}
+
+.skills__block__background {
+  position: absolute;
+  right: -13.9rem;
+  bottom: 11.3rem;
+}

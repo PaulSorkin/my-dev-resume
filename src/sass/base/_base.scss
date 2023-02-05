@@ -25,4 +25,9 @@ h3 {
   @include font($size: 4.8rem, $height: 5.6rem, $weight: 700);
   color: $color-primary;
   letter-spacing: -1.5px;
+  margin: 0;
+}
+
+p, span {
+  margin: 0;
 }
