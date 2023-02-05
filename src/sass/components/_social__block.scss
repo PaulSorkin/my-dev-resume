@@ -1,0 +1,26 @@
+.social__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: $color-primary;
+  @extend %font-primary;
+  @include font($size: 3.2rem, $height: 3.2rem, $weight: 700);
+  letter-spacing: -0.444444px;
+}
+
+.social__block__links {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.social_link {
+  cursor: pointer;
+  transition: fill 0.2s ease-in-out;
+  fill: $color-primary;
+  &:hover {
+    fill: $color-additional;
+  }
+}

@@ -10,9 +10,6 @@ html {
 body {
   @extend %font-primary;
   @include font($size: 2rem, $height: 2.4rem);
-  max-width: $desktop-width;
-  margin: auto;
-  background-color: $color-background;
 }
 
 h1, h2 {

@@ -1,0 +1,13 @@
+.link {
+  color: $color-primary;
+  @extend %font-primary;
+  @include font($size: 1.6rem, $height: 2.6rem, $weight: 700);
+  letter-spacing: 2.28571px;
+  border-bottom: solid 0.2rem $color-additional;
+  max-width: fit-content;
+  padding-bottom: 1rem;
+
+  &:hover {
+    color: $color-additional;
+  }
+}
