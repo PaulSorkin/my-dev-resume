@@ -1,0 +1,87 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.projects__block {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 6.9rem;
+
+  padding-top: 8rem;
+  padding-bottom: 11.1rem;
+}
+
+
+
+.projects__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  max-width: calc(50% - 1.5rem);
+}
+.project__image, .project__image img {
+  max-width: 100%;
+}
+
+.project__image {
+  position: relative;
+
+  .projects__links_desktop {
+    display: none;
+  }
+
+  &:hover {
+    .projects__links_desktop {
+      display: flex;
+    }
+  }
+}
+
+.projects__links_desktop {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.8rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.projects__links_small {
+  display: none;
+}
+
+.project__name {
+  color: $color-primary;
+  @extend %font-primary;
+  @include font($size: 2.4rem, $height: 3.2rem, $weight: 700);
+  padding: 1.5rem 0 0.7rem 0;
+}
+
+.project__stack__list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.project__stack__item {
+  color: $color-secondary;
+  @extend %font-primary;
+  @include font($size: 1.8rem, $height: 2.8rem, $weight: 500);
+}
