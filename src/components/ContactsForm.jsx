@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {Form, Formik} from "formik";
 import {MyTextareaInput, MyTextInput} from "./FormsControl/FormsControl";
 import Link from "./Link";
@@ -16,9 +16,13 @@ const validationSchema = Yup.object({
         .required("Don't hesitate to drop me a message"),
 });
 
-const handleSubmit = () => {};
+const handleSubmit = () => {
+    alert('YESSS')
+};
 
 const ContactsForm = () => {
+    const submitRef= useRef(null)
+
     return (
         <Formik initialValues={{
             fullname: '',
@@ -34,8 +38,9 @@ const ContactsForm = () => {
 
 
                     {status && <div>{status}</div>}
+                        <button ref={submitRef} type={"submit"} onSubmit={handleSubmit} hidden></button>
 
-                    <Link type={"submit"} text="SEND MESSAGE" />
+                    <Link text="SEND MESSAGE" onClick={() => submitRef.current.click()}/>
                     </div>
                 </Form>
             }
