@@ -1,6 +1,6 @@
 import React from 'react';
-import SocialBlock from "./SocialBlock";
 import Wrapper from "./Wrapper";
+import ContactsForm from "./ContactsForm";
 
 const Contacts = () => {
     return (
@@ -12,8 +12,8 @@ const Contacts = () => {
                         <h2>Contact</h2>
                         <p className="secondary_text">I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
                     </div>
+                    <ContactsForm />
                 </div>
-                <SocialBlock/>
             </section>
         </Wrapper>
         </div>

@@ -1,0 +1,38 @@
+.input__item {
+  width: 100%;
+}
+
+.text__input,
+.text__input_error,
+.textarea__input,
+.textarea__input_error {
+  width: 100%;
+  color: $color-primary;
+  @extend %font-primary;
+  @include font($size: 1.6rem, $height: 2.6rem, $weight: 500);
+  letter-spacing: -0.222222px;
+  border: none;
+  border-bottom: solid 0.1rem $color-primary;
+  background-color: transparent;
+  padding: 0 2.4rem 1.6rem 2.4rem;
+  outline: none;
+  resize: none;
+
+  &:focus {
+    border-bottom: solid 0.1rem $color-additional;
+  }
+}
+
+.text__input_error,
+.textarea__input_error {
+  border-bottom: solid 0.1rem $color-error;
+}
+
+.error {
+  color: $color-error;
+  @extend %font-primary;
+  @include font($size: 1.2rem, $height: 1.6rem, $weight: 500);
+  letter-spacing: -0.166667px;
+  float: right;
+  padding-top: 0.5rem;
+}

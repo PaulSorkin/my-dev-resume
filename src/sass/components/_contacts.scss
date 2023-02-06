@@ -1,6 +1,7 @@
 .contacts {
   padding-top: 8.4rem;
   padding-bottom: 9.2rem;
+  border-bottom: solid 0.1rem $color-primary;
 }
 
 .contacts__block {
@@ -13,4 +14,13 @@
   flex-direction: column;
   gap: 3.6rem;
   max-width: 44.5rem;
+}
+
+.formlines {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  width: 44.5rem;
+  gap: 3rem;
 }
