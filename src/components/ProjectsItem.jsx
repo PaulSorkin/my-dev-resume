@@ -15,7 +15,7 @@ const ProjectsItem = ({ProjectPic, name, stack}) => {
             <div className="project__stack__list">
                 {stack.map((e) => {
                     return (
-                        <span className="project__stack__item">{e}</span>
+                        <span key={e} className="project__stack__item">{e}</span>
                     );
                 })}
             </div>

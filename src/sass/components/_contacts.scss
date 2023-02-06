@@ -1,0 +1,16 @@
+.contacts {
+  padding-top: 8.4rem;
+  padding-bottom: 9.2rem;
+}
+
+.contacts__block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts__info {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+  max-width: 44.5rem;
+}

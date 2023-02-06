@@ -41,3 +41,13 @@ h3 {
 p, span {
   margin: 0;
 }
+
+.secondary_text {
+  color: $color-secondary;
+  @extend %font-primary;
+  @include font($size: 1.8rem, $height: 2.8rem, $weight: 500);
+
+  @media (max-width: $mobile-width) {
+    @include font($size: 1.6rem, $height: 2.6rem, $weight: 500);
+  }
+}
