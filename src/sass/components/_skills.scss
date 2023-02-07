@@ -10,6 +10,10 @@
 
   position: relative;
 
+  @media (max-width: 1400px) {
+    column-gap: 0.2rem;
+  }
+
   @media (max-width: $tablet-width) {
     column-gap: 0.7rem;
     row-gap: 5.2rem;
