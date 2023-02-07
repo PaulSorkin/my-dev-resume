@@ -21,7 +21,7 @@ const handleSubmit = () => {
 };
 
 const ContactsForm = () => {
-    const submitRef= useRef(null)
+    const submitRef = useRef(null)
 
     return (
         <Formik initialValues={{
@@ -30,17 +30,14 @@ const ContactsForm = () => {
             message: '',
         }} validationSchema={validationSchema} onSubmit={handleSubmit}>
             {({status}) =>
-                <Form>
+                <Form className="contacts__form">
                     <div className="formlines">
                         <MyTextInput name={"fullname"} placeholder={"NAME"}/>
                         <MyTextInput name={"email"} type={"email"} placeholder={"EMAIL"}/>
                         <MyTextareaInput name={"message"} placeholder={"MESSAGE"}/>
-
-
-                    {status && <div>{status}</div>}
-                        <button ref={submitRef} type={"submit"} onSubmit={handleSubmit} hidden></button>
-
-                    <Link text="SEND MESSAGE" onClick={() => submitRef.current.click()}/>
+                        {status && <div>{status}</div>}
+                        <button ref={submitRef} type={"submit"} onSubmit={handleSubmit} hidden></button>            {/*Actual but hidden button*/}
+                        <Link text="SEND MESSAGE" onClick={() => submitRef.current.click()}/>                       {/*Ref to the actual button*/}
                     </div>
                 </Form>
             }
