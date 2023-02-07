@@ -16,8 +16,8 @@ const Header = () => {
                 <img src={Rings} alt="Rings" className="header__block__background"/>
                 <div className="greeting__block">
                     <h1>Nice to meet you! I’m <span>Paul Sorkin</span></h1>
-                    <p className="about_text">Based in the UK, I’m a front-end developer passionate about building
-                        accessible web apps that users love.</p>
+                    <p className="about_text">Passionate Front End Developer with experience in building responsive and user-friendly web
+                        applications using cutting-edge technologies and modern frameworks.</p>
                 </div>
                 <Link text="CONTACT ME"/>
             </header>
