@@ -4,6 +4,8 @@
   border-bottom: solid 0.1rem $color-primary;
   display: flex;
   justify-content: space-between;
+
+  position: relative;
   
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -38,4 +40,21 @@
   justify-content: space-between;
   align-items: end;
   gap: 3rem;
+}
+
+.contscts__block__background {
+  position: absolute;
+  bottom: 4rem;
+  left: -27rem;
+  z-index: 2;
+
+  @media (max-width: $tablet-width) {
+    bottom: 2rem;
+    left: -30rem;
+  }
+
+  @media (max-width: $mobile-width) {
+    bottom: 9.5rem;
+    left: -26rem;
+  }
 }
