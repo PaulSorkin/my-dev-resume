@@ -7,7 +7,7 @@ const Contacts = () => {
     return (
         <div className="contacts__container">
             <Wrapper>
-                <section className="contacts">
+                <section className="contacts" id="contacts">
                     <img src={Rings} alt="Rings" className="contscts__block__background"/>
                     <div className="contacts__info">
                         <h2>Contact</h2>

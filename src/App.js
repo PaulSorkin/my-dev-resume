@@ -5,10 +5,12 @@ import Container from "./components/Container";
 import Projects from "./components/Projects";
 import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
     return (
         <>
+            <BrowserRouter>
             <Container>
                 <Header/>
                 <Skills/>
@@ -16,6 +18,7 @@ function App() {
             </Container>
             <Contacts/>
             <Footer/>
+            </BrowserRouter>
         </>
 
     );

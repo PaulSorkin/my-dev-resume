@@ -3,6 +3,7 @@ import Link from "./Link";
 import Wrapper from "./Wrapper";
 import ProjectsItem from "./ProjectsItem";
 import ProjectPic1 from "../assets/img/projects/Bitmap.jpg"
+import {HashLink} from "react-router-hash-link";
 
 const Projects = () => {
     return (
@@ -10,7 +11,9 @@ const Projects = () => {
             <section className="projects">
                 <div className="projects__header">
                     <h2>Projects</h2>
-                    <Link text="CONTACT ME"/>
+                    <HashLink to="/#contacts" smooth>
+                        <Link text="CONTACT ME"/>
+                    </HashLink>
                 </div>
                 <div className="projects__block">
                     <ProjectsItem ProjectPic={ProjectPic1} stack={['HTML', 'CSS', 'JAVASCRIPT']} name={'TODO WEB APP'} />

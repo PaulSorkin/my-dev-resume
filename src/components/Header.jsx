@@ -4,6 +4,7 @@ import SocialBlock from "./SocialBlock";
 import Rings from '../assets/svg/header_rings.svg'
 import Wrapper from "./Wrapper";
 import Photo from "../assets/img/pixlr.png"
+import {HashLink} from "react-router-hash-link";
 
 const Header = () => {
     return (
@@ -16,10 +17,13 @@ const Header = () => {
                 <img src={Rings} alt="Rings" className="header__block__background"/>
                 <div className="greeting__block">
                     <h1>Nice to meet you! I’m <span>Paul Sorkin</span></h1>
-                    <p className="about_text">Passionate Front End Developer with experience in building responsive and user-friendly web
+                    <p className="about_text">Passionate Front End Developer with experience in building responsive and
+                        user-friendly web
                         applications using cutting-edge technologies and modern frameworks.</p>
                 </div>
-                <Link text="CONTACT ME"/>
+                <HashLink to="/#contacts" smooth>
+                    <Link text="CONTACT ME"/>
+                </HashLink>
             </header>
         </Wrapper>
     );
