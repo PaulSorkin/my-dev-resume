@@ -23,13 +23,13 @@ const ContactsForm = () => {
     const handleSubmit = async (values, actions) => {
         //alert(values)
         actions.setSubmitting(true)
-        const res = await fetch('sendmail.php', {
+        const response = await fetch('sendmail.php', {
             method: 'POST',
             //body: formData
         });
-        if (res.ok) {
-            const result= await res.json();
-            alert(res.message);
+        if (response.ok) {
+            const result= await response.json();
+            alert(result.message);
             //values.fullname = '';
             //values.email = '';
             //values.message = '';
