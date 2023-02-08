@@ -21,18 +21,15 @@ const ContactsForm = () => {
     const submitRef = useRef(null);
 
     const handleSubmit = async (values, actions) => {
+        const formData = new FormData(values)
         actions.setSubmitting(true)
         const response = await fetch('sendmail.php', {
             method: 'POST',
-            headers: {
+            /*headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                fullname: values.fullname,
-                email: values.email,
-                message: values.message
-            })
+            },*/
+            body: formData
         });
         if (response.ok) {
             const result= await response.json();
