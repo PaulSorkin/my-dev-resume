@@ -27,7 +27,7 @@ const ContactsForm = () => {
             method: 'POST',
             body: JSON.stringify({
                 fullname: values.fullname,
-                emal: values.emal,
+                email: values.email,
                 message: values.message
             })
         });
@@ -48,7 +48,7 @@ const ContactsForm = () => {
     return (
         <Formik initialValues={{
             fullname: '',
-            emal: '',
+            email: '',
             message: '',
         }} validationSchema={validationSchema} onSubmit={handleSubmit}>
             {({status}) =>
