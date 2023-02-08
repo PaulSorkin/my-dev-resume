@@ -30,8 +30,9 @@ const ContactsForm = () => {
                 'Content-Type': 'application/json',
             },*/
             //body: formData
-            body: values
+            body: JSON.stringify(values)
         });
+        debugger
         if (response.ok) {
             const result= await response.json();
             alert(result.message);
