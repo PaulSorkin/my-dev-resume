@@ -21,7 +21,7 @@ const ContactsForm = () => {
     const submitRef = useRef(null);
 
     const handleSubmit = async (values, actions) => {
-        const formData = new FormData(values)
+        //const formData = new FormData(values);
         actions.setSubmitting(true)
         const response = await fetch('sendmail.php', {
             method: 'POST',
@@ -29,7 +29,8 @@ const ContactsForm = () => {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },*/
-            body: formData
+            //body: formData
+            body: Form
         });
         if (response.ok) {
             const result= await response.json();
