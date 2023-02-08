@@ -25,7 +25,11 @@ const ContactsForm = () => {
         actions.setSubmitting(true)
         const response = await fetch('sendmail.php', {
             method: 'POST',
-            //body: formData
+            body: JSON.stringify({
+                fullname: values.fullname,
+                emal: values.emal,
+                message: values.message
+            })
         });
         if (response.ok) {
             const result= await response.json();
