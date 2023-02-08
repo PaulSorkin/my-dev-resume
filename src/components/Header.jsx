@@ -21,7 +21,7 @@ const Header = () => {
                         user-friendly web
                         applications using cutting-edge technologies and modern frameworks.</p>
                 </div>
-                <HashLink to="/#contacts" smooth>
+                <HashLink to="/#contacts" smooth style={{textDecoration: 'none'}}>
                     <Link text="CONTACT ME"/>
                 </HashLink>
             </header>

@@ -11,7 +11,7 @@ const Projects = () => {
             <section className="projects">
                 <div className="projects__header">
                     <h2>Projects</h2>
-                    <HashLink to="/#contacts" smooth>
+                    <HashLink to="/#contacts" smooth style={{textDecoration: 'none'}}>
                         <Link text="CONTACT ME"/>
                     </HashLink>
                 </div>
