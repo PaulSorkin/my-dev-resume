@@ -1,25 +1,36 @@
 <?php
-// несколько получателей
-$to  = 'sorkinpavel@mail.ru' . ', ';  // обратите внимание на запятую
-$to .= 'pawtet8686@rambler.ru';
+/* Здесь проверяется существование переменных */
+if (isset($_POST['fullname'])) {$phone = $_POST['fullname'];}
+if (isset($_POST['email'])) {$name = $_POST['email'];}
+if (isset($_POST['message'])) {$name = $_POST['message'];}
 
-// тема письма
-$subject = 'Письмо с моего сайта';
+/* Сюда впишите свою эл. почту */
+$myaddres  = "sorkinpavel@mail.ru"; // кому отправляем
 
-// текст письма
-$message = 'Пользователь' . $_POST['fullname'] . ' отправил вам письмо:<br />' . $_POST['message'] . '<br />
-Связяться с ним можно по email <a href="mailto:' . $_POST['email'] . '">' . $_POST['email'] . '</a>'
-;
+/* А здесь прописывается текст сообщения, \n - перенос строки */
+$mes = "Тема: Заказ обратного звонка!\nТелефон: $email\nИмя: $fullname\nMessage: $message";
 
-// Для отправки HTML-письма должен быть установлен заголовок Content-type
-$headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+/* А эта функция как раз занимается отправкой письма на указанный вами email */
+$sub='Заказ'; //сабж
+$email='Заказ обратного звонка'; // от кого
+$send = mail ($myaddres,$sub,$mes,"Content-type:text/plain; charset = utf-8\r\nFrom:$email");
 
-// Дополнительные заголовки
-$headers .= 'To: Иван <Ivan@example.com>' . "\r\n"; // Свое имя и email
-$headers .= 'From: '  . $_POST['fullname'] . '<' . $_POST['email'] . '>' . "\r\n";
-
-
-// Отправляем
-mail($to, $subject, $message, $headers);
+ini_set('short_open_tag', 'On');
+header('Refresh: 3; URL=index.html');
 ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="refresh" content="3; url=index.html">
+<title>Спасибо! Мы свяжемся с вами!</title>
+<meta name="generator">
+<script type="text/javascript">
+setTimeout('location.replace("/index.html")', 3000);
+/*Изменить текущий адрес страницы через 3 секунды (3000 миллисекунд)*/
+</script>
+</head>
+<body>
+<h1>Спасибо! Мы свяжемся с вами!</h1>
+</body>
+</html>

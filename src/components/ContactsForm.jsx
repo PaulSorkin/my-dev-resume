@@ -24,10 +24,10 @@ const ContactsForm = () => {
         actions.setSubmitting(true)
         const response = await fetch('sendmail.php', {
             method: 'POST',
-            // headers: {
-            //     'Accept': 'application/json',
-            //     'Content-Type': 'application/json',
-            // },
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify({
                 fullname: values.fullname,
                 email: values.email,
