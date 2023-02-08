@@ -16,12 +16,30 @@ const validationSchema = Yup.object({
         .required("Don't hesitate to drop me a message"),
 });
 
-const handleSubmit = () => {
-    alert('YESSS')
-};
 
 const ContactsForm = () => {
-    const submitRef = useRef(null)
+    const submitRef = useRef(null);
+
+    const handleSubmit = async (values, actions) => {
+        //alert(values)
+        actions.setSubmitting(true)
+        const res = await fetch('sendmail.php', {
+            method: 'POST',
+            //body: formData
+        });
+        if (res.ok) {
+            const result= await res.json();
+            alert(res.message);
+            //values.fullname = '';
+            //values.email = '';
+            //values.message = '';
+            actions.resetForm();
+            actions.setSubmitting(false);
+        } else {
+            alert("Some error occurred");
+            actions.setSubmitting(false);
+        }
+    };
 
     return (
         <Formik initialValues={{
