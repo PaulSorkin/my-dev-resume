@@ -1,43 +1,25 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+// несколько получателей
+$to  = 'sorkinpavel@mail.ru' . ', ';  // обратите внимание на запятую
+$to .= 'pawtet8686@rambler.ru';
 
-require 'PHPMailer-master\src\Exception.php';
-require 'PHPMailer-master\src\PHPMailer.php';
+// тема письма
+$subject = 'Письмо с моего сайта';
 
-$mail = new PHPMailer(true);
-$mail->CharSet = 'UTF-8';
-$mail->IsHTML(true);
+// текст письма
+$message = 'Пользователь' . $_POST['fullname'] . ' отправил вам письмо:<br />' . $_POST['message'] . '<br />
+Связяться с ним можно по email <a href="mailto:' . $_POST['email'] . '">' . $_POST['email'] . '</a>'
+;
 
-//who from
-$mail->setFrom('myresumesite@mysite.com');
-//who to
-$mail->addAddress('sorkinpavel@mail.ru');
-//subject
-$mail->Subject = 'Message from my resume contacts';
+// Для отправки HTML-письма должен быть установлен заголовок Content-type
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-//Mail body
-$body = '<h1>Meet a new message</h1>';
+// Дополнительные заголовки
+$headers .= 'To: Иван <Ivan@example.com>' . "\r\n"; // Свое имя и email
+$headers .= 'From: '  . $_POST['fullname'] . '<' . $_POST['email'] . '>' . "\r\n";
 
-if(trim(!empty($_POST['fullname']))){
-    $body.='<p><strong>Name:</strong> '.$_POST['fullname'].'</p>';
-}
-if(trim(!empty($_POST['email']))){
-    $body.='<p><strong>Email:</strong> '.$_POST['email'].'</p>';
-}
-if(trim(!empty($_POST['message']))){
-    $body.='<p><strong>Message:</strong> '.$_POST['message'].'</p>';
-}
 
-//Send
-if (!$mail->send()) {
-    $message = 'Error';
-} else {
-    $message = 'Data has been sent';
-}
-
-$response = ['message' => $message];
-
-header('Content-type: application/json');
-echo json_encode($response);
+// Отправляем
+mail($to, $subject, $message, $headers);
 ?>
