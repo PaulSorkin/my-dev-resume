@@ -18,6 +18,7 @@ h1, h2 {
   color: $color-primary;
   letter-spacing: -2.5px;
   margin: 0;
+  max-width: 72rem;
 
   @media (max-width: $tablet-width) {
     @include font($size: 7.2rem, $height: 7.2rem, $weight: 700);

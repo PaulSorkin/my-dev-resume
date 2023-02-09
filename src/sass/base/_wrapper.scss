@@ -1,5 +1,6 @@
 .wrapper {
   padding: 0 calc(($desktop-width - $content-width) / 2);
+  overflow-x: hidden;
 
   @media (max-width: $tablet-width) {
     padding: 0 3rem;
