@@ -17,6 +17,7 @@ const validationSchema = Yup.object({
         .required("Don't hesitate to drop me a message"),
 });
 
+const publicKey = process.env.YOUR_PUBLIC_KEY;
 
 const ContactsForm = () => {
     const submitRef = useRef(null);
@@ -24,7 +25,7 @@ const ContactsForm = () => {
 
     const handleSubmit = (values, actions) => {
         actions.setSubmitting(true)
-        emailjs.sendForm(`YOUR_SERVICE_ID`, `YOUR_TEMPLATE_ID`, form.current, process.env.YOUR_PUBLIC_KEY)
+        emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, publicKey)
             .then((result) => {
                 console.log(result.text);
                 actions.setSubmitting(false);
