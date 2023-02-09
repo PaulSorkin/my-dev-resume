@@ -18,6 +18,8 @@ const validationSchema = Yup.object({
 });
 
 const publicKey = process.env.YOUR_PUBLIC_KEY;
+const serviseId = process.env.YOUR_SERVICE_ID;
+const templateId = process.env.YOUR_TEMPLATE_ID;
 
 const ContactsForm = () => {
     const submitRef = useRef(null);
@@ -25,7 +27,7 @@ const ContactsForm = () => {
 
     const handleSubmit = (values, actions) => {
         actions.setSubmitting(true)
-        emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, publicKey)
+        emailjs.sendForm(serviseId, templateId, form.current, publicKey)
             .then((result) => {
                 console.log(result.text);
                 actions.setSubmitting(false);
