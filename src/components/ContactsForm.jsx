@@ -3,6 +3,7 @@ import {Form, Formik} from "formik";
 import {MyTextareaInput, MyTextInput} from "./FormsControl/FormsControl";
 import Link from "./Link";
 import * as Yup from "yup";
+import * as emailjs from "@emailjs/browser";
 
 const validationSchema = Yup.object({
     fullname: Yup.string()
@@ -19,32 +20,19 @@ const validationSchema = Yup.object({
 
 const ContactsForm = () => {
     const submitRef = useRef(null);
+    const form = useRef();
 
-    const handleSubmit = async (values, actions) => {
-        //const formData = new FormData(values);
+    const handleSubmit = (values, actions) => {
         actions.setSubmitting(true)
-        const response = await fetch('sendmail.php', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            //body: formData
-            body: JSON.stringify(values)
-        });
-        debugger
-        if (response.ok) {
-            const result= await response.json();
-            alert(result.message);
-            //values.fullname = '';
-            //values.email = '';
-            //values.message = '';
-            actions.resetForm();
-            actions.setSubmitting(false);
-        } else {
-            alert("Some error occurred");
-            actions.setSubmitting(false);
-        }
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+            .then((result) => {
+                console.log(result.text);
+                actions.setSubmitting(false);
+                actions.resetForm();
+            }, (error) => {
+                console.log(error.text);
+                actions.setSubmitting(false);
+            });
     };
 
     return (
@@ -54,7 +42,7 @@ const ContactsForm = () => {
             message: '',
         }} validationSchema={validationSchema} onSubmit={handleSubmit}>
             {({status}) =>
-                <Form className="contacts__form">
+                <Form ref={form} className="contacts__form" id="contacts__form">
                     <div className="formlines">
                         <MyTextInput name={"fullname"} placeholder={"NAME"}/>
                         <MyTextInput name={"email"} type={"email"} placeholder={"EMAIL"}/>
