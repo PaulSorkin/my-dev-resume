@@ -24,7 +24,7 @@ const ContactsForm = () => {
 
     const handleSubmit = (values, actions) => {
         actions.setSubmitting(true)
-        emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, YOUR_PUBLIC_KEY)
+        emailjs.sendForm(`YOUR_SERVICE_ID`, `YOUR_TEMPLATE_ID`, form.current, `YOUR_PUBLIC_KEY`)
             .then((result) => {
                 console.log(result.text);
                 actions.setSubmitting(false);
