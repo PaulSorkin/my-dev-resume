@@ -61,7 +61,7 @@ header {
     right: -3.2rem
   }
 
-  @media (max-width: $mobile-width) {
+  @media (max-width: $big-mobile-width) {
     width: 17.4rem;
     height: 38.3rem;
     top: 0;
@@ -78,7 +78,7 @@ header {
     max-width: 44.5rem;
   }
 
-  @media (max-width: $mobile-width) {
+  @media (max-width: $big-mobile-width) {
    padding-top: 33.3rem;
     text-align: center;
   }
