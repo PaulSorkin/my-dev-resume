@@ -9,6 +9,8 @@
   margin: 0;
   cursor: $cursor;
 
+  text-decoration: none;
+
   &:hover {
     color: $color-additional;
   }

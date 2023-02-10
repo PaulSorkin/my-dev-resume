@@ -1,9 +1,9 @@
 import React, {useRef} from 'react';
 import {Form, Formik} from "formik";
 import {MyTextareaInput, MyTextInput} from "./FormsControl/FormsControl";
-import Link from "./Link";
 import * as Yup from "yup";
 import * as emailjs from "@emailjs/browser";
+import CustomLink from "./CustomLink";
 
 const validationSchema = Yup.object({
     fullname: Yup.string()
@@ -52,7 +52,7 @@ const ContactsForm = () => {
                         <MyTextareaInput name={"message"} placeholder={"MESSAGE"}/>
                         {status && <div>{status}</div>}
                         <button ref={submitRef} type={"submit"} onSubmit={handleSubmit} hidden></button>            {/*Actual but hidden button*/}
-                        <Link text="SEND MESSAGE" onClick={() => submitRef.current.click()}/>                       {/*Ref to the actual button*/}
+                        <CustomLink text="SEND MESSAGE" onClick={() => submitRef.current.click()}/>                       {/*Ref to the actual button*/}
                     </div>
                 </Form>
             }

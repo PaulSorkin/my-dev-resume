@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from "./Link";
+import CustomLink from "./CustomLink";
 import SocialBlock from "./SocialBlock";
 import Rings from '../assets/svg/header_rings.svg'
 import Wrapper from "./Wrapper";
@@ -22,7 +22,7 @@ const Header = () => {
                         applications using cutting-edge technologies and modern frameworks.</p>
                 </div>
                 <HashLink to="/#contacts" smooth style={{textDecoration: 'none'}}>
-                    <Link text="CONTACT ME"/>
+                    <CustomLink text="CONTACT ME"/>
                 </HashLink>
             </header>
         </Wrapper>

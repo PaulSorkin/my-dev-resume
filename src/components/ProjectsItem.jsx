@@ -1,14 +1,15 @@
 import React from 'react';
-import Link from "./Link";
+import CustomLink from "./CustomLink";
 
-const ProjectsItem = ({ProjectPic, name, stack}) => {
+const ProjectsItem = ({ProjectPic, name, stack, deploy, code=null}) => {
     return (
         <div className='projects__item'>
             <div className="project__image">
                 <img src={ProjectPic} alt={name}/>
                 <div className="projects__links_desktop">
-                    <Link text="VIEW PROJECT" />
-                    <Link text="VIEW CODE" />
+                    <CustomLink text="VIEW PROJECT" to={deploy} />
+                    {!code ? null :
+                    <CustomLink text="VIEW CODE" to={code} />}
                 </div>
             </div>
             <p className="project__name">{name}</p>
@@ -20,8 +21,9 @@ const ProjectsItem = ({ProjectPic, name, stack}) => {
                 })}
             </div>
             <div className="projects__links_small">
-                <Link text="VIEW PROJECT" />
-                <Link text="VIEW CODE" />
+                <CustomLink text="VIEW PROJECT" to={deploy} />
+                {!code ? null :
+                    <CustomLink text="VIEW CODE" to={code} />}
             </div>
         </div>
     );
