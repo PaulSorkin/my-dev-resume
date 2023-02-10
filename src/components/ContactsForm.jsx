@@ -17,9 +17,9 @@ const validationSchema = Yup.object({
         .required("Don't hesitate to drop me a message"),
 });
 
-const publicKey = process.env.YOUR_PUBLIC_KEY;
-const serviseId = process.env.YOUR_SERVICE_ID;
-const templateId = process.env.YOUR_TEMPLATE_ID;
+const publicKey = process.env.REACT_APP_YOUR_PUBLIC_KEY;
+const serviseId = process.env.REACT_APP_YOUR_SERVICE_ID;
+const templateId = process.env.REACT_APP_YOUR_TEMPLATE_ID;
 
 const ContactsForm = () => {
     const submitRef = useRef(null);
