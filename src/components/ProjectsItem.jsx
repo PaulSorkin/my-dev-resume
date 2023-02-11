@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomLink from "./CustomLink";
 
-const ProjectsItem = ({ProjectPic, name, stack, deploy, code=null}) => {
+const ProjectsItem = ({ProjectPic, name, stack, description, deploy, code=null}) => {
     return (
         <div className='projects__item'>
             <div className="project__image">
@@ -20,6 +20,7 @@ const ProjectsItem = ({ProjectPic, name, stack, deploy, code=null}) => {
                     );
                 })}
             </div>
+            <p className="project__description">{description}</p>
             <div className="projects__links_small">
                 <CustomLink text="VIEW PROJECT" to={deploy} />
                 {!code ? null :
