@@ -89,6 +89,7 @@ h1 {
   z-index: 5;
 
   & span {
+    display: inline-block;
     border-bottom: $color-additional solid 0.6rem;
   }
 }
