@@ -33,14 +33,16 @@ const ContactsForm = () => {
         setIsSubmitting(true);
         emailjs.sendForm(serviseId, templateId, form.current, publicKey)
             .then((result) => {
-                console.log(result.text);
+                //console.log(result.text);
                 actions.setSubmitting(false);
                 setIsSubmitting(false);
                 actions.resetForm();
+                alert("Your message has been received!");
             }, (error) => {
-                console.log(error.text);
+                //console.log(error.text);
                 actions.setSubmitting(false);
                 setIsSubmitting(false);
+                alert("Sorry, something went wrong. Please, try again.");
             });
     };
 
