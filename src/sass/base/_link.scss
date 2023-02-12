@@ -14,4 +14,14 @@
   &:hover {
     color: $color-additional;
   }
+
+}
+
+.inactive {
+  border: none;
+  cursor: default;
+
+  &:hover {
+    color: $color-primary;
+  }
 }

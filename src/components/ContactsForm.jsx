@@ -1,9 +1,10 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {Form, Formik} from "formik";
 import {MyTextareaInput, MyTextInput} from "./FormsControl/FormsControl";
 import * as Yup from "yup";
 import * as emailjs from "@emailjs/browser";
 import CustomLink from "./CustomLink";
+import CustomLinkInactive from "./CustomLinkInactive";
 
 const validationSchema = Yup.object({
     fullname: Yup.string()
@@ -25,16 +26,21 @@ const ContactsForm = () => {
     const submitRef = useRef(null);
     const form = useRef();
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
     const handleSubmit = (values, actions) => {
-        actions.setSubmitting(true)
+        actions.setSubmitting(true);
+        setIsSubmitting(true);
         emailjs.sendForm(serviseId, templateId, form.current, publicKey)
             .then((result) => {
                 console.log(result.text);
                 actions.setSubmitting(false);
+                setIsSubmitting(false);
                 actions.resetForm();
             }, (error) => {
                 console.log(error.text);
                 actions.setSubmitting(false);
+                setIsSubmitting(false);
             });
     };
 
@@ -51,8 +57,10 @@ const ContactsForm = () => {
                         <MyTextInput name={"email"} type={"email"} placeholder={"EMAIL"}/>
                         <MyTextareaInput name={"message"} placeholder={"MESSAGE"}/>
                         {status && <div>{status}</div>}
+                        {isSubmitting ? (<CustomLinkInactive text="SENDING..." />) : (
+                            <CustomLink text="SEND MESSAGE" onClick={() => submitRef.current.click()}/>             /*Ref to the actual button*/
+                        )}
                         <button ref={submitRef} type={"submit"} onSubmit={handleSubmit} hidden></button>            {/*Actual but hidden button*/}
-                        <CustomLink text="SEND MESSAGE" onClick={() => submitRef.current.click()}/>                       {/*Ref to the actual button*/}
                     </div>
                 </Form>
             }
