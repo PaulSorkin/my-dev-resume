@@ -1,22 +1,24 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import {Link} from "react-router-dom";
+import {motion} from "framer-motion";
 
-const CustomLink = ({text, ...props}) => {
+const CustomLink = forwardRef(({text, ...props}, ref) => {
     return (
         {...props.to ? (
-                <Link className='react_link' to={props.to}>
+                <Link ref={ref} className='react_link' to={props.to}>
                     <p className='link' onClick={props.onClick}>
                         {text}
                     </p>
                 </Link>
             ) : (
-                <div className='react_link'>
+                <div ref={ref} className='react_link'>
                     <p className='link' onClick={props.onClick}>
                         {text}
                     </p>
                 </div>
             )}
     );
-};
+});
 
+export const MCustomLink = motion(CustomLink);
 export default CustomLink;

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
+import {motion} from "framer-motion";
 import CustomLink from "./CustomLink";
 
-const ProjectsItem = ({ProjectPic, name, stack, description, deploy, code=null}) => {
+const ProjectsItem = forwardRef(({ProjectPic, name, stack, description, deploy, code=null}, ref) => {
     return (
-        <div className='projects__item'>
+        <div ref={ref} className='projects__item'>
             <div className="project__image">
                 <img src={ProjectPic} alt={name}/>
                 <div className="projects__links_desktop">
@@ -28,6 +29,7 @@ const ProjectsItem = ({ProjectPic, name, stack, description, deploy, code=null})
             </div>
         </div>
     );
-};
+});
 
+export const MProjectsItem = motion(ProjectsItem);
 export default ProjectsItem;
