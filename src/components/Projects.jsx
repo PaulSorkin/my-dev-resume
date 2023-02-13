@@ -30,7 +30,7 @@ const picAnimation = {
         opacity: 1,
         transition: { delay: custom * 0.2 },
     }),
-}
+};
 
 
 const Projects = () => {
@@ -39,7 +39,7 @@ const Projects = () => {
             <motion.section
                 initial='hidden'
                 whileInView='visible'
-                viewport={{amount: 0.2, once: true}}
+                viewport={{amount: 0.1, once: true}}
                 className="projects">
                 <div className="projects__header">
                     <motion.h2 custom={1} variants={textAnimation}>Projects</motion.h2>
