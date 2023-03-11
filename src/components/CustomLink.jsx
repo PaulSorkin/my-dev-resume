@@ -5,7 +5,7 @@ import {motion} from "framer-motion";
 const CustomLink = forwardRef(({text, ...props}, ref) => {
     return (
         {...props.to ? (
-                <Link ref={ref} className='react_link' to={props.to}>
+                <Link ref={ref} className='react_link' to={props.to} target={'_blank'}>
                     <p className='link' onClick={props.onClick}>
                         {text}
                     </p>
