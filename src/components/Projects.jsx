@@ -80,7 +80,7 @@ const Projects = () => {
                                   stack={['HTML', 'CSS', 'JAVASCRIPT', 'REST API']}
                                   name={'Image Gallery'}
                                   description={'Utilizing the Unsplash API, the application quickly searches and displays high-quality images related to the keywords entered in the search form. Built with HTML, CSS, and raw JavaScript, this application offers a sleek and intuitive interface, making it easy to find the perfect image.'}
-                                  deploy={'https://rolling-scopes-school.github.io/paulsorkin-JSFEPRESCHOOL/image-galery/'}/>
+                                  deploy={'https://image-galery-omega.vercel.app/'}/>
                     <MProjectsItem custom={3} variants={picAnimation}
                                   ProjectPic={Sounds}
                                   stack={['HTML', 'CSS', 'JAVASCRIPT']}
