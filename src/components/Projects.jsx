@@ -6,7 +6,7 @@ import {MProjectsItem} from "./ProjectsItem";
 import World from "../assets/img/projects/World.jpg"
 import Blog from "../assets/img/projects/Blog-MERN.jpg"
 import Shelter from "../assets/img/projects/Shelter.png"
-import Firebase from "../assets/img/projects/Google Firebase Authentication.png"
+import RemodelingTool from "../assets/img/projects/Home-Remodeling-contractors-App.png"
 import Gallery from "../assets/img/projects/Image Gallery.png"
 import Sounds from "../assets/img/projects/Eco-sounds.png"
 import {HashLink} from "react-router-hash-link";
@@ -67,14 +67,15 @@ const Projects = () => {
                                    stack={['HTML', 'SASS', 'JAVASCRIPT']}
                                    name={'Shelter'}
                                    description={'Discover your new furry friend at the Cozy House pets shelter website. Designed with a user-friendly endless slider and detailed information modal window, it allows you to easily browse and learn about the animals available for adoption. Built entirely on raw JavaScript code, this website is an example of markup and styles that pixel-perfect fit the Figma layout.'}
-                                   deploy={'https://rolling-scopes-school.github.io/paulsorkin-JSFE2022Q1/shelter/'}/>
+                                   deploy={'https://shelter-rho.vercel.app/index.html'}
+                                   code={'https://github.com/PaulSorkin/shelter'}/>
                     <MProjectsItem custom={3} variants={picAnimation}
-                                   ProjectPic={Firebase}
+                                   ProjectPic={RemodelingTool}
                                    stack={['React', 'TypeScript', 'Redux Toolkit', 'Google Firebase Authentication']}
-                                   name={'Google Firebase Authentication'}
-                                   description={'Ensure a secure and personalized user experience with this ready-to-use client-side authentication tool. Built on top of the reliable Google Firebase API, it allows apps to identify users and save user data securely in the cloud. With this tool, your app can provide a seamless experience across all of the user\'s devices.'}
-                                   deploy={'https://paulsorkin.github.io/google-firebase-authentication/#/login'}
-                                   code={'https://github.com/PaulSorkin/google-firebase-authentication'}/>
+                                   name={'Home Remodeling contractors\' App'}
+                                   description={'“Works contractor” is a person that handles/manages projects in the home remodeling area. A contractor has a web app based dashboard where he could manage his projects. We want to implement a new screen for him to give him the ability to look up his existing projects based on some criteria and represent them in a friendly-user way.'}
+                                   deploy={'https://paulsorkin.github.io/homaze-test-task/'}
+                                   code={'https://github.com/PaulSorkin/homaze-test-task'}/>
                     <MProjectsItem custom={3} variants={picAnimation}
                                    ProjectPic={Gallery}
                                    stack={['HTML', 'CSS', 'JAVASCRIPT', 'REST API']}
