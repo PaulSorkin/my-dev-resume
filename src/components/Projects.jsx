@@ -71,7 +71,7 @@ const Projects = () => {
                                    code={'https://github.com/PaulSorkin/shelter'}/>
                     <MProjectsItem custom={3} variants={picAnimation}
                                    ProjectPic={RemodelingTool}
-                                   stack={['React', 'TypeScript', 'Redux Toolkit', 'Google Firebase Authentication']}
+                                   stack={['React', 'Redux Toolkit', 'Styled-Components']}
                                    name={'Home Remodeling contractors\' App'}
                                    description={'“Works contractor” is a person that handles/manages projects in the home remodeling area. A contractor has a web app based dashboard where he could manage his projects. We want to implement a new screen for him to give him the ability to look up his existing projects based on some criteria and represent them in a friendly-user way.'}
                                    deploy={'https://paulsorkin.github.io/homaze-test-task/'}
